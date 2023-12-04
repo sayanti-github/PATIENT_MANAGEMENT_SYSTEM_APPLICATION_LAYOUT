@@ -253,11 +253,12 @@ h6 {
   color: #012970;
 }
 .pagetitle h1 img{
-  width: 6%;
+  width: 5%;
   margin-right: 10px;
-  border-radius: 10%;
-  box-shadow: 1px 1px 7px #d0d0d0;
+  border-radius: 50%;
+ /* box-shadow: 1px 1px 7px #d0d0d0; */
 }
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -355,6 +356,9 @@ h6 {
     border-top: 1px solid #eaedf1;
     border-left: 1px solid #eaedf1;
   }
+  .header .toggle-sidebar-btn {
+    display:block;
+}
 }
 
 @keyframes dropdown-animate {
