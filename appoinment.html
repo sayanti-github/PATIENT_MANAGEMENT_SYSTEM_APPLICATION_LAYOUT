@@ -36,6 +36,12 @@
     font-family: "Poppins", sans-serif;
     color: #828282;
 }
+.form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 0!important;
+    padding-bottom: 0.625rem;
+}
+
+
   </style>
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -101,6 +107,12 @@
         <a class="nav-link collapsed" href="index.html">
           <i class="fa fa-user" aria-hidden="true"></i>
           <span>Patient Onboarding</span>
+        </a>
+      </li><!-- End Patient Onboarding Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="consultant-onboarding.html">
+          <i class="fa fa-user-md" aria-hidden="true"></i>
+          <span>Consultant Onboarding</span>
         </a>
       </li><!-- End Patient Onboarding Nav -->
       <li class="nav-item">
@@ -204,14 +216,16 @@
               </div>
               <div class="col-md-4" style="margin-top: 23px;">
                 <label for="floatingSelect">Time Slots</label>
+
                 <div class="form-floating mb-3 mt-1">
-                  <select class="form-select" id="floatingSelect" aria-label="State">
+                  <input type="time" class="form-control">
+                  <!-- <select class="form-select" id="floatingSelect" aria-label="State">
                     <option selected="" class="active">Select time</option>
                     <option value="1">10.00 a.m-11:00 a.m</option>
                     <option value="2">3 p.m-4 p.m</option>
                     <option value="3">5 p.m-6 p.m</option>
                   </select>
-                  
+                   -->
                 </div>
               </div>
 
@@ -222,7 +236,7 @@
             </form><!-- End floating Labels Form -->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Book The Appointment</button>
-                <button type="submit" class="btn btn-secondary">Cancel The Appointment</button>
+                <!-- <button type="submit" class="btn btn-secondary">Cancel The Appointment</button> -->
               </div>
           </div>
         </div>
