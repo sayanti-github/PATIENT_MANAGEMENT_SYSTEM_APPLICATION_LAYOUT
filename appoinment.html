@@ -118,9 +118,15 @@
       <li class="nav-item">
         <a class="nav-link " href="appoinment.html">
           <i class="fa fa-calendar" aria-hidden="true"></i>
-          <span>Take An Appointment</span>
+          <span>Onboarding List</span>
         </a>
       </li><!-- End Patient Onboarding Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="appointment-history.html">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <span>Appointment History</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="patient-list.html">
           <i class="fa fa-comments-o" aria-hidden="true"></i>
@@ -179,7 +185,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1><img src="assets/img/appointment.gif" alt="">Take an Appointment</h1>
+      <h1><img src="assets/img/list.gif" alt="">Onboarding List</h1>
       <!-- <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -196,13 +202,8 @@
 
             <!-- Floating Labels Form -->
             <form class="row g-3">
-                <div class="col-md-4" style="margin-top: 23px;">
-                    <label for="inputText" class="form-label" style="margin-bottom: 6px;">Date Of Consultation</label>
-                    <input type="date" class="form-control" value="DOB" style="    padding-top: 15px;
-                    padding-bottom: 15px;">
-    
-                  </div>
-              <div class="col-md-4" style="margin-top: 23px;">
+                
+              <!-- <div class="col-md-4" style="margin-top: 23px;">
                 <label for="floatingSelect">Name of the doctor</label>
                 <div class="form-floating mb-3 mt-1">
                   <select class="form-select" id="floatingSelect" aria-label="State">
@@ -213,12 +214,24 @@
                   </select>
                   
                 </div>
-              </div>
+              </div> -->
               <div class="col-md-4" style="margin-top: 23px;">
+                <label for="inputText" class="form-label" style="margin-bottom: 6px;">Patient Id</label>
+                <input type="text" class="form-control" style="    padding-top: 15px;
+                padding-bottom: 15px;">
+              </div>
+
+              <div class="col-md-4" style="margin-top: 23px;">
+                <label for="inputText" class="form-label" style="margin-bottom: 6px;">Patient Name</label>
+                <input type="text" class="form-control" style="    padding-top: 15px;
+                padding-bottom: 15px;">
+              </div>  
+
+              <!-- <div class="col-md-4" style="margin-top: 23px;">
                 <label for="floatingSelect">Time Slots</label>
 
                 <div class="form-floating mb-3 mt-1">
-                  <input type="time" class="form-control">
+                  <input type="time" class="form-control"> -->
                   <!-- <select class="form-select" id="floatingSelect" aria-label="State">
                     <option selected="" class="active">Select time</option>
                     <option value="1">10.00 a.m-11:00 a.m</option>
@@ -226,17 +239,106 @@
                     <option value="3">5 p.m-6 p.m</option>
                   </select>
                    -->
-                </div>
+                <!-- </div>
+              </div> -->
+
+              <div class="col-md-4" style="margin-top: 23px;">
+                <label for="inputText" class="form-label" style="margin-bottom: 6px;">Date Of Booking</label>
+                <input type="date" class="form-control" value="DOB" style="    padding-top: 15px;
+                padding-bottom: 15px;">
               </div>
+              
 
              
               <!-- <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div> -->
             </form><!-- End floating Labels Form -->
+            <br>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Book The Appointment</button>
-                <!-- <button type="submit" class="btn btn-secondary">Cancel The Appointment</button> -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Take An Appointment
+             </button> 
+                  <!-- Modal -->
+             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="card-title">Appointment Booked</h5>
+                           
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        <div class="modal-body">
+                            <div class="card">
+                                <div class="card-body">
+                                   <div class="row">
+                                     <div class="col-md-4">
+                                         <label for="floatingSelect">Consultaion Date</label>
+                                         <div class="form-floating mb-3">
+                                             <select class="form-select" id="floatingSelect" aria-label="State">
+                                               <option selected="" class="active">03-11-2023</option>
+                                               <option value="1">10-08-2023</option>
+                                               <option value="2">20-09-2023</option>
+                                               <option value="3">10-10-2023</option>
+                                             </select>
+                                            
+                                           </div>
+                                     </div>
+                                   </div>
+                                  <!-- Bordered Tabs -->
+                                  <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Patient Details</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false" tabindex="-1">Consultation Details</button>
+                                    </li>
+                                    
+                                  </ul>
+                                  <div class="tab-content pt-4" id="borderedTabContent">
+                                    <div class="tab-pane fade active show" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
+                                      <p><b>Patient Name:</b> Sayanti Chodhury</p>
+                                      <p><b>Date Of Birth:</b> 10-10-1999</p>
+                                      <P><b>Blood Group:</b> O+</P>
+                                      <P><b>Phone Number:</b> +91 8777586184</P>
+                                      <p><b>Whatsapp Number:</b> +91 8777586184</p>
+                                      <P><b>Gaurdian's Name:</b> Biswanath Chowdhury</P>
+                                      <p><b>Email Address:</b> tinnychowdhury1999$gmail.com</p>
+                                      <p><b>Gender:</b> Female</p>
+                                      <p><b>City:</b> Kolkata</p>
+                                      <p><b>State:</b> West Bengal</p>
+                                      <p><b>Address:</b> C/28, Amarabati,Sodepur</p>
+                                      <p><b>Age:</b> 24</p>
+                                      <p><b>Height:</b></p>
+                                      <p><b>Weight:</b></p>
+                                      <p><b>Do you have any chronic disease?</b> Yes, Asthma seens 20 years</p>
+                                      <p><b>Do you have any allergy with food or medicine?</b> Yes,</p>
+                                      <p><b>Do you have any previous consultation?</b> Yes</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
+                                          <p><b>Consultaion Id:</b> 1190003</p>
+                                          <p><b>Consultation Date:</b> 03-11-2023</p>
+                                          <p><b>Consultant Name:</b></p>
+                                          <p><b>Treatment Details:</b></p>
+                                          <p class="d-flex">
+                                             <b>Uploaded Prescription/Report:<div>
+                                                 <button type="submit" class="btn btn-primary">View the document</button>
+                                                 <button type="submit" class="btn btn-primary">Download the document</button>
+                                               </div></b>
+                                             
+                                         </p>
+                                    </div>
+                                  </div><!-- End Bordered Tabs -->
+                    
+                                </div>
+                              </div>
+                        </div>
+                
+                      </div>
+                    </div>
+                  </div>  
               </div>
           </div>
         </div>
@@ -268,6 +370,9 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
